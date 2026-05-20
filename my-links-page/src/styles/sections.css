@@ -1,6 +1,7 @@
 .section-header {
   margin-bottom: 16px;
   animation: section-fade-in 0.8s ease-out forwards;
+  animation-delay: var(--section-delay, 0.1s);
   opacity: 0;
 }
 
@@ -28,6 +29,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   animation: section-title-glow 1.2s ease-out forwards;
+  animation-delay: var(--section-delay, 0.1s);
   text-shadow: 0 0 10px rgba(138, 107, 159, 0);
 }
 
@@ -36,6 +38,7 @@
   height: 1px;
   background: linear-gradient(to right, rgba(106, 90, 122, 0.4), transparent);
   animation: section-line-grow 1s ease-out forwards;
+  animation-delay: var(--section-delay, 0.1s);
   transform-origin: center;
   transform: scaleX(0);
 }
@@ -48,26 +51,18 @@
   padding-left: 22px;
 }
 
-.links-section:nth-child(1) .section-header,
-.links-section:nth-child(1) .section-title,
-.links-section:nth-child(1) .section-line {
-  animation-delay: 0.1s;
+.links-section--social {
+  --section-delay: 0.1s;
 }
 
-.links-section:nth-child(2) .section-header,
-.links-section:nth-child(2) .section-title,
-.links-section:nth-child(2) .section-line {
-  animation-delay: 0.25s;
+.links-section--visual {
+  --section-delay: 0.25s;
 }
 
-.links-section:nth-child(3) .section-header,
-.links-section:nth-child(3) .section-title,
-.links-section:nth-child(3) .section-line {
-  animation-delay: 0.4s;
+.links-section--code {
+  --section-delay: 0.4s;
 }
 
-.links-section:nth-child(4) .section-header,
-.links-section:nth-child(4) .section-title,
-.links-section:nth-child(4) .section-line {
-  animation-delay: 0.55s;
+.links-section--commissions {
+  --section-delay: 0.55s;
 }

@@ -129,3 +129,13 @@
     transform: translateY(0);
   }
 }
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-sweep {
+  to { --border-angle: 360deg; }
+}

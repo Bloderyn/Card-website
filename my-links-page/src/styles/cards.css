@@ -1,16 +1,16 @@
-.links-section:nth-child(1) .links-grid {
+.links-section--social .links-grid {
   --base-delay: 0.2s;
 }
 
-.links-section:nth-child(2) .links-grid {
+.links-section--visual .links-grid {
   --base-delay: 0.35s;
 }
 
-.links-section:nth-child(3) .links-grid {
+.links-section--code .links-grid {
   --base-delay: 0.5s;
 }
 
-.links-section:nth-child(4) .links-grid {
+.links-section--commissions .links-grid {
   --base-delay: 0.65s;
 }
 
@@ -65,6 +65,13 @@
     0 0 14px color-mix(in srgb, var(--link-color, #8a6b9f) 15%, transparent);
 }
 
+.social-link:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 6px color-mix(in srgb, var(--link-color, #8a6b9f) 10%, transparent);
+}
+
 .social-link:focus-visible {
   outline: 2px solid rgba(138, 107, 159, 0.7);
   outline-offset: 3px;
@@ -92,6 +99,41 @@
 .social-link:hover::before {
   opacity: 0.9;
   transform: scaleY(1);
+}
+
+.social-link::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  background-image: conic-gradient(
+    from var(--border-angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--link-color, #8a6b9f) 90%, white) 60deg,
+    color-mix(in srgb, var(--link-color, #8a6b9f) 25%, transparent) 100deg,
+    transparent 140deg
+  );
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: border-sweep 2.5s linear infinite paused;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.social-link:hover::after {
+  opacity: 1;
+  animation-play-state: running;
 }
 
 .link-icon {
@@ -134,19 +176,6 @@
     color-mix(in srgb, var(--link-color, #8a6b9f) 50%, transparent);
 }
 
-.link-icon i {
-  display: flex;
-  position: relative;
-}
-
-.link-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--link-color, #8a6b9f);
-  position: relative;
-  z-index: 1;
-}
-
 .link-icon img {
   position: relative;
   width: 18px;
@@ -183,7 +212,23 @@
 
 .link-desc {
   font-family: "Hanken Grotesk", sans-serif;
-  color: #6a6a7a;
+  color: #8a8a9a;
   font-size: 12px;
   line-height: 1.4;
+}
+
+.link-arrow {
+  margin-left: auto;
+  font-size: 16px;
+  color: rgba(201, 198, 197, 0.15);
+  flex-shrink: 0;
+  transform: translateX(-4px);
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.social-link:hover .link-arrow {
+  color: color-mix(in srgb, var(--link-color, #8a6b9f) 80%, white);
+  transform: translateX(2px);
 }
