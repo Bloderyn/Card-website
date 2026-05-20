@@ -1,0 +1,131 @@
+@keyframes title-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 14px rgba(138, 107, 159, 0.3))
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 32px rgba(138, 107, 159, 0.75))
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
+
+@keyframes title-glow-warm {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 14px rgba(138, 107, 159, 0.3))
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 28px rgba(190, 100, 80, 0.5))
+      drop-shadow(0 0 12px rgba(160, 60, 110, 0.4))
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
+
+@keyframes title-unfurl {
+  from {
+    opacity: 0;
+    letter-spacing: 0px;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 4px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes section-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes section-title-glow {
+  from {
+    color: rgba(197, 197, 213, 0.3);
+    text-shadow: 0 0 0 rgba(138, 107, 159, 0);
+  }
+  to {
+    color: #c5c5d5;
+    text-shadow: 0 0 15px rgba(138, 107, 159, 0.4);
+  }
+}
+
+@keyframes section-line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes section-rune-glow {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 8px rgba(138, 107, 159, 0.8);
+  }
+}
+
+@keyframes avatar-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes title-ornament-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes title-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,66 @@
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.title-ornament {
+  color: #9a75b5;
+  font-size: 14px;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 0 6px rgba(138, 107, 159, 0.8));
+  animation: title-ornament-enter 0.5s ease-out 0.2s both;
+}
+
+.title {
+  font-family: "Cinzel Decorative", "Noto Serif", serif;
+  font-weight: 700;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 54px;
+  background: linear-gradient(135deg, #f0ecf8 0%, #c8a8e0 45%, #e8e0f5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(138, 107, 159, 0.35))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  animation:
+    title-unfurl 0.8s cubic-bezier(0.2, 0, 0.4, 1) 0.35s both,
+    title-glow 4s ease-in-out 0.85s infinite,
+    title-glow-warm 6s ease-in-out 2s infinite;
+}
+
+.subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: title-enter 0.5s ease-out 0.5s both;
+}
+
+.divider-line {
+  height: 1px;
+  width: 56px;
+  opacity: 0.65;
+  display: block;
+  flex-shrink: 0;
+}
+
+.divider-left {
+  background: linear-gradient(to right, transparent, #8a6a9a);
+}
+
+.divider-right {
+  background: linear-gradient(to left, transparent, #8a6a9a);
+}
+
+.subtitle {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-style: italic;
+  color: #a090b8;
+  font-size: 15px;
+  text-align: center;
+  line-height: 22px;
+}

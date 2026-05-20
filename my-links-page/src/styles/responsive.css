@@ -1,0 +1,29 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  #particles {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .title {
+    font-size: 32px;
+    letter-spacing: 4px;
+    line-height: 40px;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    gap: 36px;
+  }
+}

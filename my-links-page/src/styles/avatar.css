@@ -1,0 +1,88 @@
+.avatar-frame {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: avatar-enter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 160px;
+  height: 185px;
+  background: rgba(20, 15, 28, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  filter: drop-shadow(0 0 18px rgba(138, 107, 159, 0.35));
+  z-index: 1;
+}
+
+.avatar-img-wrap {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.88);
+}
+
+.avatar-inner-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    rgba(80, 20, 120, 0.22) 0%,
+    transparent 50%,
+    rgba(140, 30, 80, 0.14) 100%
+  );
+  box-shadow: inset 0 0 28px 0 rgba(75, 0, 130, 0.45);
+}
+
+.avatar-ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ring-track {
+  fill: none;
+  stroke: rgba(100, 70, 140, 0.2);
+  stroke-width: 1;
+}
+
+.ring-moving {
+  fill: none;
+  stroke: rgba(138, 107, 159, 0.55);
+  stroke-width: 1.5;
+  stroke-dasharray: 15 35;
+  stroke-linecap: round;
+  transform-origin: 110px 110px;
+  animation: ring-rotate 18s linear infinite;
+}
+
+.ring-dot {
+  fill: rgba(180, 140, 220, 0.75);
+}

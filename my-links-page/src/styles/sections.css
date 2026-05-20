@@ -1,0 +1,73 @@
+.section-header {
+  margin-bottom: 16px;
+  animation: section-fade-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.section-header-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.section-rune {
+  color: #8a6b9f;
+  font-size: 11px;
+  flex-shrink: 0;
+  line-height: 1;
+  animation: section-rune-glow 1.5s ease-in-out infinite 0.5s;
+}
+
+.section-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+  color: #c5c5d5;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: section-title-glow 1.2s ease-out forwards;
+  text-shadow: 0 0 10px rgba(138, 107, 159, 0);
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(106, 90, 122, 0.4), transparent);
+  animation: section-line-grow 1s ease-out forwards;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+
+.section-subtitle {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-style: italic;
+  color: #5a5a6a;
+  font-size: 12px;
+  padding-left: 22px;
+}
+
+.links-section:nth-child(1) .section-header,
+.links-section:nth-child(1) .section-title,
+.links-section:nth-child(1) .section-line {
+  animation-delay: 0.1s;
+}
+
+.links-section:nth-child(2) .section-header,
+.links-section:nth-child(2) .section-title,
+.links-section:nth-child(2) .section-line {
+  animation-delay: 0.25s;
+}
+
+.links-section:nth-child(3) .section-header,
+.links-section:nth-child(3) .section-title,
+.links-section:nth-child(3) .section-line {
+  animation-delay: 0.4s;
+}
+
+.links-section:nth-child(4) .section-header,
+.links-section:nth-child(4) .section-title,
+.links-section:nth-child(4) .section-line {
+  animation-delay: 0.55s;
+}
