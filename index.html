@@ -3,11 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Website</title>
-    <meta http-equiv="refresh" content="0; url=./my-links-page/index.html" />
+    <meta
+      name="description"
+      content="Bloderyn — Archivist of the Forbidden &amp; Digital. Social presence, visual archives, code, and commissions."
+    />
+    <meta property="og:title" content="Bloderyn" />
+    <meta
+      property="og:description"
+      content="Archivist of the Forbidden &amp; Digital"
+    />
+    <meta property="og:type" content="website" />
+    <title>Arcanum</title>
+    <link rel="stylesheet" href="./my-links-page/src/style.css" />
   </head>
   <body>
-    <p>Redirecting to the site...</p>
-    <p><a href="./my-links-page/index.html">Open card website</a></p>
+    <div class="page">
+      <!-- Particle Canvas -->
+      <canvas id="particles" aria-hidden="true"></canvas>
+
+      <!-- Main Content -->
+      <div class="content">
+        <!-- Hero / Header -->
+        <header class="hero">
+          <!-- Avatar -->
+          <div class="avatar-frame">
+            <svg
+              class="avatar-ring-svg"
+              viewBox="0 0 220 220"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle class="ring-track" cx="110" cy="110" r="102" />
+              <circle class="ring-moving" cx="110" cy="110" r="102" />
+              <circle cx="110" cy="8" r="3" class="ring-dot" />
+              <circle cx="198" cy="59" r="3" class="ring-dot" />
+              <circle cx="198" cy="161" r="3" class="ring-dot" />
+              <circle cx="110" cy="212" r="3" class="ring-dot" />
+              <circle cx="22" cy="161" r="3" class="ring-dot" />
+              <circle cx="22" cy="59" r="3" class="ring-dot" />
+            </svg>
+            <div class="avatar-wrapper">
+              <div class="avatar-img-wrap">
+                <img
+                  class="avatar-img"
+                  src="./my-links-page/src/images/bloderyn.jpg"
+                  alt="Bloderyn"
+                />
+              </div>
+              <div class="avatar-inner-glow" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <div class="title-block">
+            <span class="title-ornament" aria-hidden="true">✦</span>
+            <h1 class="title">BLODERYN</h1>
+            <div class="subtitle-row">
+              <span class="divider-line divider-left"></span>
+              <span class="subtitle"
+                >Archivist of the Forbidden &amp; Digital</span
+              >
+              <span class="divider-line divider-right"></span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Social Links -->
+        <div class="links-container">
+          <!-- Social Presence -->
+          <section class="links-section">
+            <div class="section-header">
+              <div class="section-header-top">
+                <span class="section-rune" aria-hidden="true">&#9670;</span>
+                <h2 class="section-title">Social Presence</h2>
+                <div class="section-line"></div>
+              </div>
+              <p class="section-subtitle">Echoes across the void</p>
+            </div>
+            <div class="links-grid">
+              <a
+                class="social-link"
+                href="https://bsky.app"
+                style="--link-color: #7a8baa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/bluesky.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">BlueSky</span>
+                  <span class="link-desc">Spectral transmissions</span>
+                </span>
+              </a>
+              <a
+                class="social-link"
+                href="https://instagram.com"
+                style="--link-color: #aa7b8a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/instagram.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">Instagram</span>
+                  <span class="link-desc">Visual chronicles</span>
+                </span>
+              </a>
+              <a
+                class="social-link"
+                href="https://x.com"
+                style="--link-color: #8a9bba"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/twitter.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">X</span>
+                  <span class="link-desc">Brief incantations</span>
+                </span>
+              </a>
+              <a
+                class="social-link"
+                href="https://facebook.com"
+                style="--link-color: #7a8aaa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/facebook.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">Facebook</span>
+                  <span class="link-desc">Archive collective</span>
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <!-- Visual Archives -->
+          <section class="links-section">
+            <div class="section-header">
+              <div class="section-header-top">
+                <span class="section-rune" aria-hidden="true">&#9671;</span>
+                <h2 class="section-title">Visual Archives</h2>
+                <div class="section-line"></div>
+              </div>
+              <p class="section-subtitle">Fragments of the forbidden</p>
+            </div>
+            <div class="links-grid">
+              <a
+                class="social-link"
+                href="https://cara.app"
+                style="--link-color: #ba8aaa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/cara.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">Cara</span>
+                  <span class="link-desc">Curated manifestations</span>
+                </span>
+              </a>
+              <a
+                class="social-link"
+                href="https://youtube.com"
+                style="--link-color: #aa6a7a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/youtube.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">YouTube</span>
+                  <span class="link-desc">Moving visions</span>
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <!-- Code Repository -->
+          <section class="links-section">
+            <div class="section-header">
+              <div class="section-header-top">
+                <span class="section-rune" aria-hidden="true">&#9672;</span>
+                <h2 class="section-title">Code Repository</h2>
+                <div class="section-line"></div>
+              </div>
+              <p class="section-subtitle">
+                Ancient logic preserved in digital stone
+              </p>
+            </div>
+            <div class="links-grid links-grid--single">
+              <a
+                class="social-link"
+                href="https://github.com"
+                style="--link-color: #9a7aaa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/github.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">GitHub</span>
+                  <span class="link-desc"
+                    >Source archives and technical grimoires</span
+                  >
+                </span>
+              </a>
+            </div>
+          </section>
+
+          <!-- Commissions -->
+          <section class="links-section">
+            <div class="section-header">
+              <div class="section-header-top">
+                <span class="section-rune" aria-hidden="true">&#9674;</span>
+                <h2 class="section-title">Commissions</h2>
+                <div class="section-line"></div>
+              </div>
+              <p class="section-subtitle">Contract work from the shadows</p>
+            </div>
+            <div class="links-grid">
+              <a
+                class="social-link"
+                href="https://vgen.co"
+                style="--link-color: #7aaa9a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/vgen.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">VGen</span>
+                  <span class="link-desc">Commission inquiries</span>
+                </span>
+              </a>
+              <a
+                class="social-link"
+                href="https://ko-fi.com"
+                style="--link-color: #aa7a7a"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="link-icon"
+                  ><img src="./my-links-page/src/svg/kofi.svg" alt=""
+                /></span>
+                <span class="link-text">
+                  <span class="link-title">Ko-fi</span>
+                  <span class="link-desc">Support the craft</span>
+                </span>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-divider" aria-hidden="true">
+            <div class="footer-line-wide"></div>
+            <div class="footer-line-center"></div>
+          </div>
+          <div class="footer-inner">
+            <p class="footer-copy">
+              &copy; 2026 Blod Coven &mdash; All rites reserved
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="./my-links-page/src/main.js"></script>
   </body>
 </html>
