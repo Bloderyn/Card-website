@@ -19,8 +19,20 @@
     line-height: 40px;
   }
 
+  .divider-line {
+    width: 28px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
   .links-grid {
     grid-template-columns: 1fr;
+  }
+
+  .social-link--wide {
+    grid-column: span 1;
   }
 
   .content {

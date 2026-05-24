@@ -147,8 +147,9 @@
   flex-shrink: 0;
   color: var(--link-color, #8a6b9f);
   overflow: hidden;
-  perspective: 300px;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
 }
 
 .link-icon::before {
@@ -160,20 +161,25 @@
   height: 100%;
   border-radius: 50%;
   background: currentColor;
-  opacity: 0.5;
+  opacity: 0;
   transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease,
+    border-radius 0.4s ease;
   z-index: 0;
 }
 
 .social-link:hover .link-icon::before {
-  transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(2.2);
+  opacity: 0.9;
+  border-radius: 38%;
 }
 
 .social-link:hover .link-icon {
-  transform: scale(1.1);
-  box-shadow: 0 0 8px
-    color-mix(in srgb, var(--link-color, #8a6b9f) 50%, transparent);
+  transform: scale(1.12) translateY(-1px);
+  box-shadow: 0 4px 14px
+    color-mix(in srgb, var(--link-color, #8a6b9f) 45%, transparent);
 }
 
 .link-icon img {
@@ -182,12 +188,32 @@
   height: 18px;
   z-index: 1;
   transition:
-    transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1),
-    filter 0.3s ease 0.1s;
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.25s ease;
+}
+
+.link-icon--discord .icon-discord-svg {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.social-link:hover .link-icon--discord .icon-discord-svg {
+  transform: scale(1.05);
+}
+
+.social-link:hover .link-icon--discord .icon-discord-svg path {
+  stroke: #fff;
+}
+
+.social-link:hover .link-icon--discord .icon-discord-svg circle {
+  fill: #fff;
 }
 
 .social-link:hover .link-icon img {
-  transform: rotate(360deg);
+  transform: scale(1.05);
   filter: brightness(0) invert(1);
 }
 
