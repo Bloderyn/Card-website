@@ -1,5 +1,3 @@
-import './style.css'
-
 // ─── Floating ember particles ────────────────────────────────────────────────
 const canvas = document.getElementById('particles')
 if (canvas) {
