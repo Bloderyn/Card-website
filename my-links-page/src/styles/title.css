@@ -8,7 +8,6 @@
 .title-ornament {
   color: #9a75b5;
   font-size: 14px;
-  letter-spacing: 2px;
   filter: drop-shadow(0 0 6px rgba(138, 107, 159, 0.8));
   animation: title-ornament-enter 0.5s ease-out 0.2s both;
 }
