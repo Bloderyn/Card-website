@@ -17,8 +17,23 @@ if (canvas) {
 
   function rand(a, b) { return Math.random() * (b - a) + a }
 
+  // Pre-rendered glow per color: a radial gradient is far cheaper than shadowBlur every frame
+  const SPRITES = COLORS.map(([r, g, b]) => {
+    const s = document.createElement('canvas')
+    s.width = s.height = 32
+    const c = s.getContext('2d')
+    const grad = c.createRadialGradient(16, 16, 0, 16, 16, 16)
+    grad.addColorStop(0, `rgba(${r},${g},${b},1)`)
+    grad.addColorStop(0.15, `rgba(${r},${g},${b},0.9)`)
+    grad.addColorStop(1, `rgba(${r},${g},${b},0)`)
+    c.fillStyle = grad
+    c.fillRect(0, 0, 32, 32)
+    return s
+  })
+
   function make(scatter) {
-    const [r, g, b] = COLORS[Math.floor(Math.random() * COLORS.length)]
+    const idx = Math.floor(Math.random() * COLORS.length)
+    const [r, g, b] = COLORS[idx]
     const maxLife = rand(300, 700)
     return {
       x: rand(0, W || 1),
@@ -29,7 +44,7 @@ if (canvas) {
       life: scatter ? rand(0, maxLife) : 0,
       maxLife,
       maxOpacity: rand(0.25, 0.65),
-      r, g, b,
+      sprite: SPRITES[idx],
     }
   }
 
@@ -58,16 +73,11 @@ if (canvas) {
         ? (p.life / half) * p.maxOpacity
         : ((p.maxLife - p.life) / half) * p.maxOpacity
       if (p.life >= p.maxLife) Object.assign(p, make(false))
-      ctx.save()
       ctx.globalAlpha = Math.max(0, opacity)
-      ctx.shadowBlur = p.size * 5
-      ctx.shadowColor = `rgb(${p.r},${p.g},${p.b})`
-      ctx.fillStyle = `rgb(${p.r},${p.g},${p.b})`
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.restore()
+      const d = p.size * 12
+      ctx.drawImage(p.sprite, p.x - d / 2, p.y - d / 2, d, d)
     }
+    ctx.globalAlpha = 1
     rafId = requestAnimationFrame(frame)
   }
 
