@@ -10,7 +10,7 @@ if (canvas) {
     [140, 70,  100],
     [100, 60,  150],
   ]
-  const COUNT = 40
+  const COUNT = 24
   let W, H
   const pts = []
   let rafId
@@ -43,7 +43,7 @@ if (canvas) {
       size: rand(1, 2.2),
       life: scatter ? rand(0, maxLife) : 0,
       maxLife,
-      maxOpacity: rand(0.25, 0.65),
+      maxOpacity: rand(0.2, 0.38),
       sprite: SPRITES[idx],
     }
   }
@@ -89,7 +89,7 @@ if (canvas) {
       const x = (e.clientX - left) / width - 0.5
       const y = (e.clientY - top) / height - 0.5
       avatar.style.transition = 'none'
-      avatar.style.transform = `perspective(500px) rotateY(${x * 18}deg) rotateX(${-y * 18}deg) scale(1.04)`
+      avatar.style.transform = `perspective(500px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1.02)`
     })
     avatar.addEventListener('mouseleave', () => {
       avatar.style.transition = 'transform 0.4s cubic-bezier(0.2, 0, 0.2, 1)'
@@ -98,12 +98,14 @@ if (canvas) {
     })
   }
 
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) cancelAnimationFrame(rafId)
-    else rafId = requestAnimationFrame(frame)
-  })
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(rafId)
+      else rafId = requestAnimationFrame(frame)
+    })
 
-  window.addEventListener('resize', resize)
-  init()
-  frame()
+    window.addEventListener('resize', resize)
+    init()
+    frame()
+  }
 }

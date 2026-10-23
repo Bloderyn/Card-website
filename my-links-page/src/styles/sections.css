@@ -17,7 +17,6 @@
   font-size: 11px;
   flex-shrink: 0;
   line-height: 1;
-  animation: section-rune-glow 1.5s ease-in-out infinite 0.5s;
 }
 
 .section-title {
@@ -28,9 +27,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   white-space: nowrap;
-  animation: section-title-glow 1.2s ease-out forwards;
-  animation-delay: var(--section-delay, 0.1s);
-  text-shadow: 0 0 10px rgba(138, 107, 159, 0);
+  text-shadow: 0 0 8px rgba(138, 107, 159, 0.18);
 }
 
 .section-line {
@@ -46,7 +43,7 @@
 .section-subtitle {
   font-family: "Hanken Grotesk", sans-serif;
   font-style: italic;
-  color: #5a5a6a;
+  color: #a49baa;
   font-size: 12px;
   padding-left: 22px;
 }

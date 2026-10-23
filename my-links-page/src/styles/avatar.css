@@ -79,7 +79,7 @@
   stroke-dasharray: 15 35;
   stroke-linecap: round;
   transform-origin: 110px 110px;
-  animation: ring-rotate 18s linear infinite;
+  animation: ring-rotate 30s linear infinite;
 }
 
 .ring-dot {
