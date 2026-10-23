@@ -14,10 +14,6 @@
   --base-delay: 0.65s;
 }
 
-.links-grid .social-link {
-  animation: card-enter 0.4s ease both;
-}
-
 .links-grid .social-link:nth-child(1) {
   animation-delay: calc(var(--base-delay, 0.2s) + 0ms);
 }
@@ -49,6 +45,7 @@
     border-color 0.2s,
     transform 0.2s,
     box-shadow 0.2s;
+  animation: card-enter 0.4s ease both;
 }
 
 .social-link:hover {
