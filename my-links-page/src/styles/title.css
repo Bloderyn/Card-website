@@ -26,8 +26,7 @@
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(138, 107, 159, 0.35))
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-  animation:
-    title-unfurl 0.8s cubic-bezier(0.2, 0, 0.4, 1) 0.35s both;
+  animation: title-unfurl 0.8s cubic-bezier(0.2, 0, 0.4, 1) 0.35s both;
 }
 
 .subtitle-row {
@@ -80,12 +79,22 @@
   margin-top: 8px;
 }
 
+.hero-note {
+  color: #a090b8;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+}
+
 .hero-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-height: 42px;
+  height: auto;
   padding: 0 18px;
   border: 1px solid rgba(194, 164, 216, 0.34);
   border-radius: 999px;
@@ -101,13 +110,13 @@
     box-shadow 0.2s ease;
 }
 
-.hero-action--primary {
+.hero-action.hero-action--primary {
   border-color: rgba(194, 164, 216, 0.58);
   background: linear-gradient(135deg, #684879, #493252);
   box-shadow: 0 5px 18px rgba(74, 45, 89, 0.26);
 }
 
-.hero-action--secondary {
+.hero-action.hero-action--secondary {
   background: rgba(24, 16, 29, 0.65);
 }
 
