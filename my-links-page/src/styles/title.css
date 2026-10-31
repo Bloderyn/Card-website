@@ -79,6 +79,15 @@
   margin-top: 8px;
 }
 
+.hero-note {
+  color: #a090b8;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+}
+
 .hero-action {
   display: inline-flex;
   align-items: center;

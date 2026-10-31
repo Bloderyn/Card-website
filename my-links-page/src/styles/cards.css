@@ -156,6 +156,7 @@
 .link-icon img[src*="instagram.svg"],
 .link-icon img[src*="youtube.svg"],
 .link-icon img[src*="artstation.svg"],
+.link-icon img[src*="deviantart.svg"],
 .link-icon img[src*="github.svg"],
 .link-icon img[src*="vgen.svg"],
 .link-icon img[src*="kofi.svg"] {
@@ -247,7 +248,64 @@
     color 0.25s ease;
 }
 
+.link-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border: 1px solid rgba(194, 164, 216, 0.34);
+  border-radius: 999px;
+  color: #d9cbe5;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  line-height: 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .social-link:hover .link-arrow {
   color: color-mix(in srgb, var(--link-color, #8a6b9f) 80%, white);
   transform: translateX(2px);
+}
+
+.social-link--disabled,
+.social-link--disabled:hover,
+.social-link--disabled:active {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+  cursor: not-allowed;
+  background: rgba(15, 13, 14, 0.5);
+  border-color: rgba(201, 198, 197, 0.08);
+  box-shadow: none;
+  transform: none;
+}
+
+.social-link--disabled:hover::before {
+  opacity: 0;
+  transform: scaleY(0.2);
+}
+
+.social-link--disabled:hover .link-icon {
+  transform: none;
+  box-shadow: none;
+}
+
+.social-link--disabled:hover .link-icon::before {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+}
+
+.social-link--disabled:hover .link-icon img {
+  transform: none;
+  filter: none;
+}
+
+.social-link--disabled:hover .link-title {
+  color: #c5c5d5;
+}
+
+.social-link--disabled:hover .link-arrow {
+  color: rgba(201, 198, 197, 0.55);
+  transform: translateX(-4px);
 }

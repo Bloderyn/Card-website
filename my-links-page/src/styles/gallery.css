@@ -1,0 +1,266 @@
+.site-tabs {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: none;
+}
+
+.content {
+  gap: 36px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  width: calc(100% + 40px);
+  max-width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 -20px;
+  padding: 12px max(20px, calc((100vw - 672px) / 2));
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 9, 26, 0.92),
+    rgba(14, 6, 16, 0.78)
+  );
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(168, 128, 192, 0.45) 30%,
+    rgba(168, 128, 192, 0.45) 70%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f0ecf8 0%, #c8a8e0 55%, #e8e0f5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Cinzel Decorative", "Noto Serif", serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.site-brand::before {
+  content: "✦";
+  color: #9a75b5;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 12px;
+  -webkit-text-fill-color: #9a75b5;
+  filter: drop-shadow(0 0 6px rgba(138, 107, 159, 0.8));
+}
+
+.site-nav {
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid rgba(168, 128, 192, 0.22);
+  border-radius: 999px;
+  background: rgba(24, 14, 30, 0.6);
+}
+
+.site-nav::before {
+  display: none;
+}
+
+.site-nav-tab {
+  position: relative;
+  z-index: 1;
+  min-height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #aaa6b5;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.site-nav-tab::before {
+  display: none;
+}
+
+.site-nav-tab:hover {
+  color: #e8e0f5;
+  background: rgba(138, 107, 159, 0.14);
+}
+
+.site-nav-tab[data-active] {
+  background: transparent;
+  color: #f3ecfa;
+}
+
+.site-nav .site-nav-indicator {
+  z-index: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.25, 1.15, 0.4, 1);
+}
+
+.site-nav-indicator::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(194, 164, 216, 0.26);
+  border-radius: inherit;
+  background: rgba(104, 72, 121, 0.38);
+}
+
+.site-nav-indicator[data-moving]::before {
+  animation: nav-indicator-squish 0.5s ease-out;
+}
+
+@keyframes nav-indicator-squish {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  35% {
+    transform: scale(1.06, 0.96);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav .site-nav-indicator {
+    transition-duration: 0ms;
+  }
+
+  .site-nav-indicator[data-moving]::before {
+    animation: none;
+  }
+}
+
+.site-nav-tab:focus-visible {
+  outline: 2px solid rgba(168, 128, 192, 0.8);
+  outline-offset: 2px;
+}
+
+.site-tab-panel,
+.home-content,
+.art-portfolio {
+  width: 100%;
+}
+
+.content {
+  margin-inline: auto;
+  margin-top: 40px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.art-gallery-empty {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px;
+  border: 1px dashed rgba(168, 128, 192, 0.28);
+  border-radius: 12px;
+  background: rgba(15, 13, 20, 0.36);
+  text-align: center;
+}
+
+.art-gallery-ornament {
+  color: #a880c0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.art-gallery-empty h2 {
+  color: #d9cbe5;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.art-gallery-empty p {
+  max-width: 38ch;
+  color: #aaa6b5;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.art-gallery-link {
+  margin-top: 4px;
+  color: #c8a8e0;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+}
+
+.art-gallery-link:hover {
+  color: #eee3f7;
+}
+
+@media (max-width: 520px) {
+  .content {
+    gap: 28px;
+    margin-top: 28px;
+  }
+
+  .site-header {
+    gap: 8px;
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+    padding: 10px 16px;
+  }
+
+  .site-brand {
+    gap: 6px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .site-brand::before {
+    font-size: 10px;
+  }
+
+  .site-nav-tab {
+    min-height: 30px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .home-content {
+    gap: 28px;
+  }
+
+  .art-gallery-empty {
+    min-height: 180px;
+    padding: 22px 16px;
+  }
+}

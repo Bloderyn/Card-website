@@ -39,6 +39,15 @@
   padding: 32px 0;
 }
 
+.footer-note {
+  margin-top: -8px;
+  font-family: "Hanken Grotesk", sans-serif;
+  color: #7f7889;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  line-height: 18px;
+}
+
 .footer-copy {
   font-family: "Hanken Grotesk", sans-serif;
   font-style: italic;
