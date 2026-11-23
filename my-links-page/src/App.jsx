@@ -89,7 +89,7 @@ const sections = [
         href: "https://vgen.co/Bloderyn",
         color: "#7aaa9a",
         icon: vGenIcon,
-        badge: "Opens mid-November",
+        badge: "Opens mid-December",
       },
       {
         name: "Ko-fi",
@@ -335,7 +335,7 @@ export default function App() {
                     </Button>
                   </nav>
                   <Text className="hero-note" component="p">
-                    Commissions open around mid-November
+                    Commissions open around mid-December
                   </Text>
                 </div>
               </header>
